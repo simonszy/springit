@@ -19,7 +19,7 @@ public class SpringitApplication {
 		System.out.println("Welcome to Springit!");
 	}
 
-	@Bean
+//	@Bean
 	CommandLineRunner runner(LinkRepository linkRepository, CommentRepository commentRepository) {
 		return args -> {
 			Link link = new Link("Getting Started With Spring Boot 2", "http://setriakor.amegaxoxo.com");
