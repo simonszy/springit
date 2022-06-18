@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class HomeController {
 
-    @GetMapping(value = "/", consumes = "application/json", produces = "application/json")
-    public String home() {
-        return "index";
+    @GetMapping("/home")
+    public String home(Model model) {
+        model.addAttribute("title", "Hello, Thymeleaf");
+        return "home";
     }
 }
