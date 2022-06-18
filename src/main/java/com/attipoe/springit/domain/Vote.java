@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
+//@NoArgsConstructor
 public class Vote {
 
     @Id
