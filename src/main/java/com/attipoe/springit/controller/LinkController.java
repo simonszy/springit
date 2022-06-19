@@ -1,6 +1,5 @@
 package com.attipoe.springit.controller;
 
-import com.attipoe.springit.SpringitApplication;
 import com.attipoe.springit.domain.Link;
 import com.attipoe.springit.repository.LinkRepository;
 import org.slf4j.Logger;
@@ -9,12 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.List;
-import java.util.Optional;
 import javax.validation.Valid;
+import java.util.Optional;
+
 
 @Controller
 public class LinkController {
@@ -23,6 +24,7 @@ public class LinkController {
 
     private LinkRepository linkRepository;
 
+    @Autowired
     public LinkController(LinkRepository linkRepository) {
         this.linkRepository = linkRepository;
     }
@@ -63,7 +65,6 @@ public class LinkController {
             redirectAttributes
                     .addAttribute("id", link.getId())
                     .addFlashAttribute("success", true);
-
             return "redirect:/link/{id}";
         }
     }

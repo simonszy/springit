@@ -2,6 +2,7 @@ package com.attipoe.springit.domain;
 
 import com.attipoe.springit.service.BeanUtil;
 import lombok.*;
+import org.hibernate.validator.constraints.URL;
 import org.ocpsoft.prettytime.PrettyTime;
 
 import javax.persistence.Entity;
@@ -16,8 +17,6 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.net.URI;
-import org.hibernate.validator.constraints.URL;
 
 @Entity
 @RequiredArgsConstructor
