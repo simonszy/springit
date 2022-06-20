@@ -5,10 +5,7 @@ import lombok.*;
 import org.hibernate.validator.constraints.URL;
 import org.ocpsoft.prettytime.PrettyTime;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -38,6 +35,9 @@ public class Link extends Auditable {
     // comments
     @OneToMany(mappedBy = "link")
     private List<Comment> comments = new ArrayList<>();
+
+    @ManyToOne
+    private Person user;
 
     public void addComment(Comment comment) {
         comments.add(comment);
