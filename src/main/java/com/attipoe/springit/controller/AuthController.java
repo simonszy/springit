@@ -1,12 +1,20 @@
 package com.attipoe.springit.controller;
 
 import com.attipoe.springit.domain.Person;
+import com.attipoe.springit.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AuthController {
+
+    private UserService userService;
+
+    public AuthController(UserService userService) {
+        this.userService = userService;
+    }
+
     @GetMapping("/login")
     public String login() {
         return "auth/login";
