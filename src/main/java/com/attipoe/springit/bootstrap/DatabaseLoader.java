@@ -106,5 +106,4 @@ public class DatabaseLoader implements CommandLineRunner {
         userRepository.save(master);
         users.put("super@gmail.com",master);
     }
-
 }
