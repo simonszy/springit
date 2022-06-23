@@ -21,18 +21,19 @@ import java.util.List;
 //@ToString
 @NoArgsConstructor
 public class Link extends Auditable {
-    @Id
-    @GeneratedValue
+
+    @Id @GeneratedValue
     private Long id;
+
     @NonNull
     @NotEmpty(message = "Please enter a title.")
     private String title;
+
     @NonNull
     @NotEmpty(message = "Please enter a url.")
-    @URL(message = "Please enter a valid url")
+    @URL(message = "Please enter a valid url.")
     private String url;
 
-    // comments
     @OneToMany(mappedBy = "link")
     private List<Comment> comments = new ArrayList<>();
 
